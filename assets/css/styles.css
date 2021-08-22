@@ -394,6 +394,7 @@ img {
     align-items: center;
     margin-bottom: var(--mb-2-5);
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 .skills__icon,
@@ -416,6 +417,8 @@ img {
 }
 
 .skills__list {
+    height: 0;
+    overflow: hidden;
     row-gap: 1.5rem;
     padding-left: 2.7rem;
 }
@@ -489,11 +492,6 @@ img {
 
 .skills__photoshop {
     width: 85%;
-}
-
-.skills__close .skills__list {
-    height: 0;
-    overflow: hidden;
 }
 
 .skills__open .skills__list {

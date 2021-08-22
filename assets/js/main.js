@@ -29,6 +29,15 @@ function linkAction() {
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
 /*==================== ACCORDION SKILLS ====================*/
+const skillsContent = document.querySelectorAll('.skills__content');
+
+function toggleSkills() {
+    this.classList.toggle('skills__open');
+}
+
+skillsContent.forEach(element => {
+    element.addEventListener('click', toggleSkills);
+});
 
 /*==================== QUALIFICATION TABS ====================*/
 
