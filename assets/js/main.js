@@ -40,20 +40,27 @@ skillsContent.forEach(element => {
 });
 
 /*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll('[data-target]');
-const tabContents = document.querySelectorAll('[data-content]');
+const qualificationTabs = document.querySelector('.qualification__tabs');
+const qualificationContent = document.querySelectorAll('.qualification__content');
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.target);
+qualificationTabs.addEventListener('click', event => {
+    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+    if (filter == null) {
+        return;
+    }
 
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('qualification__active');
-        });
-        target.classList.add('qualification__active');
+    const active = document.querySelector('.qualification__button.qualification__active');
+    active.classList.remove('qualification__active');
+    const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+    target.classList.add('qualification__active');
 
-        tabs.forEach(tab => {
-            tab.classList.toggle('qualification__active');
+    setTimeout(() => {
+        qualificationContent.forEach(content => {
+            if (filter === content.dataset.type) {
+                content.classList.add('qualification__active');
+            } else {
+                content.classList.remove('qualification__active');
+            }
         });
     });
 });

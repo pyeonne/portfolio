@@ -111,6 +111,13 @@ img {
     height: auto;
 }
 
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
 /* Reusable CSS Classes */
 .section {
     padding: 2rem 0 4rem;
@@ -562,11 +569,11 @@ img {
     transform: translate(6px, -7px);
 }
 
-.qualification [data-content] {
+.qualification [data-type] {
     display: none;
 }
 
-.qualification__active[data-content] {
+.qualification__active[data-type] {
     display: block;
 }
 
