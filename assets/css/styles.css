@@ -242,6 +242,9 @@ button {
 }
 
 /* Active link */
+.active-link {
+    color: var(--first-color);
+}
 
 /* Change background header */
 
